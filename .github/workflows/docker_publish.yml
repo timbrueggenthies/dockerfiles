@@ -21,8 +21,8 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
-          context: ./cupsd
-          file: ./Dockerfile
+          context: .
+          file: ./cupsd/Dockerfile
           platforms: linux/arm/v7
           push: true
           tags: bobbybeat1/cupsd:latest
