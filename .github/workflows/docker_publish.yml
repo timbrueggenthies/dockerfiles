@@ -22,4 +22,4 @@ jobs:
           image_tag: latest,${{ env.GITHUB_SHA_SHORT }}
           pull_image_and_stages: false
           push_git_tag: true
-          context: "./cups"
+          context: "./cupsd"
