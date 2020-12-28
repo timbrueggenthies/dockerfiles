@@ -4,24 +4,24 @@ FROM arm32v7/debian:latest
 MAINTAINER $MAINTAINER
 
 # Install Packages (basic tools, cups, basic drivers, HP drivers)
-RUN apt-get update \
-&& apt-get install -y \
-  sudo \
-  whois \
-  cups \
-  cups-client \
-  cups-bsd \
-  cups-filters \
-  foomatic-db-compressed-ppds \
-  printer-driver-all \
-  openprinting-ppds \
-  hpijs-ppds \
-  hp-ppd \
-  hplip \
-  smbclient \
-  printer-driver-cups-pdf \
-&& apt-get clean \
-&& rm -rf /var/lib/apt/lists/*
+RUN apt-get update
+RUN apt-get install -y sudo
+RUN apt-get install -y whois
+RUN apt-get install -y cups
+RUN apt-get install -y cups-client
+RUN apt-get install -y cups-bsd
+RUN apt-get install -y cups-filters
+RUN apt-get install -y foomatic-db-compressed-ppds
+RUN apt-get install -y printer-driver-all
+RUN apt-get install -y openprinting-ppds
+RUN apt-get install -y hpijs-ppds
+RUN apt-get install -y hp-ppd
+RUN apt-get install -y hplip
+RUN apt-get install -y smbclient
+RUN apt-get install -y printer-driver-cups-pdf
+
+RUN apt-get clean
+RUN rm -rf /var/lib/apt/lists/*
 
 # Add user and disable sudo password checking
 RUN useradd \
