@@ -18,7 +18,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_PASSWORD }}
-          image_name: bobbybeat/cupsd
+          image_name: bobbybeat1/cupsd
           image_tag: latest,${{ env.GITHUB_SHA_SHORT }}
           pull_image_and_stages: true
           push_git_tag: true
