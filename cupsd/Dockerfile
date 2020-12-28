@@ -1,6 +1,6 @@
 ARG BASE_USER
 ARG MAINTAINER
-FROM ${BASE_USER}/debian:testing
+FROM arm32v7/debian:latest
 MAINTAINER $MAINTAINER
 
 # Install Packages (basic tools, cups, basic drivers, HP drivers)
