@@ -15,9 +15,7 @@ jobs:
     - name: Checkout the code       
       uses: actions/checkout@v1          
     - name: Set up Docker Buildx      
-      uses: crazy-max/ghaction-docker-buildx@v1      
-      with:        
-        version: latest    
+      uses: crazy-max/ghaction-docker-buildx@v3
     - name: Prepare      
       if: success()      
       id: prepare      
@@ -34,6 +32,6 @@ jobs:
       run: |        
         docker buildx build \        
         --platform ${{ steps.prepare.outputs.docker_platform }} \      
-        --tag ${{ steps.prepare.outputs.docker_image }}:${{ steps.prepare.outputs.version }} \     
-        --file ./Dockerfile \     
-        --output type=image,push=true ./cupsd
+        --tag ${{ steps.prepare.outputs.docker_image }}:${{ steps.prepare.outputs.version }} \  
+        --output "type=image,push=true" \   
+        --file ./cupsd/Dockerfile ./cupsd
